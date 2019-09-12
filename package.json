@@ -1,0 +1,7 @@
+{
+  "name": "user-eating-project",
+  "version": "1.0.0",
+  "scripts": {
+    "api": "elm-graphql http://localhost:3000/graphql --base UserEating"
+  }
+}
