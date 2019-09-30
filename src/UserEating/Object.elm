@@ -5,16 +5,20 @@
 module UserEating.Object exposing (..)
 
 
+type Eating
+    = Eating
+
+
+type Sleeping
+    = Sleeping
+
+
 type SubscribedQuery
     = SubscribedQuery
 
 
 type User
     = User
-
-
-type UserStatus
-    = UserStatus
 
 
 type WebsocketConnection

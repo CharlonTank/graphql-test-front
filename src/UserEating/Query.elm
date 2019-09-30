@@ -75,7 +75,7 @@ type alias UserStatusRequiredArguments =
 
 {-| Returns a UserStatus
 -}
-user_status : UserStatusRequiredArguments -> SelectionSet decodesTo UserEating.Object.UserStatus -> SelectionSet decodesTo RootQuery
+user_status : UserStatusRequiredArguments -> SelectionSet decodesTo UserEating.Union.UserStatus -> SelectionSet decodesTo RootQuery
 user_status requiredArgs object_ =
     Object.selectionForCompositeField "user_status" [ Argument.required "id" requiredArgs.id Encode.string ] object_ identity
 
@@ -88,7 +88,7 @@ type alias UserStatusesOptionalArguments =
 
 {-| Returns a UserStatus
 -}
-user_statuses : (UserStatusesOptionalArguments -> UserStatusesOptionalArguments) -> SelectionSet decodesTo UserEating.Object.UserStatus -> SelectionSet (List decodesTo) RootQuery
+user_statuses : (UserStatusesOptionalArguments -> UserStatusesOptionalArguments) -> SelectionSet decodesTo UserEating.Union.UserStatus -> SelectionSet (List decodesTo) RootQuery
 user_statuses fillInOptionals object_ =
     let
         filledInOptionals =

@@ -44,11 +44,6 @@ last_name =
     Object.selectionForField "(Maybe String)" "last_name" [] (Decode.string |> Decode.nullable)
 
 
-status : SelectionSet (Maybe String) UserEating.Object.User
-status =
-    Object.selectionForField "(Maybe String)" "status" [] (Decode.string |> Decode.nullable)
-
-
 updated_at : SelectionSet (Maybe String) UserEating.Object.User
 updated_at =
     Object.selectionForField "(Maybe String)" "updated_at" [] (Decode.string |> Decode.nullable)

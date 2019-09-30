@@ -47,7 +47,7 @@ type alias BulkCreateUserStatusRequiredArguments =
 
 {-| creates some UserStatuses
 -}
-bulk_create_user_status : BulkCreateUserStatusRequiredArguments -> SelectionSet decodesTo UserEating.Object.UserStatus -> SelectionSet (Maybe (List (Maybe decodesTo))) RootMutation
+bulk_create_user_status : BulkCreateUserStatusRequiredArguments -> SelectionSet decodesTo UserEating.Union.UserStatus -> SelectionSet (Maybe (List (Maybe decodesTo))) RootMutation
 bulk_create_user_status requiredArgs object_ =
     Object.selectionForCompositeField "bulk_create_user_status" [ Argument.required "user_status" requiredArgs.user_status (UserEating.InputObject.encodeUserStatusInputType |> Encode.maybe |> Encode.list) ] object_ (identity >> Decode.nullable >> Decode.list >> Decode.nullable)
 
@@ -91,7 +91,7 @@ type alias BulkUpdateUserStatusRequiredArguments =
 
 {-| Updates some UserStatuses
 -}
-bulk_update_user_status : BulkUpdateUserStatusRequiredArguments -> SelectionSet decodesTo UserEating.Object.UserStatus -> SelectionSet (Maybe (List (Maybe decodesTo))) RootMutation
+bulk_update_user_status : BulkUpdateUserStatusRequiredArguments -> SelectionSet decodesTo UserEating.Union.UserStatus -> SelectionSet (Maybe (List (Maybe decodesTo))) RootMutation
 bulk_update_user_status requiredArgs object_ =
     Object.selectionForCompositeField "bulk_update_user_status" [ Argument.required "user_status" requiredArgs.user_status (UserEating.InputObject.encodeUserStatusInputType |> Encode.maybe |> Encode.list) ] object_ (identity >> Decode.nullable >> Decode.list >> Decode.nullable)
 
@@ -135,7 +135,7 @@ type alias CreateUserStatusRequiredArguments =
 
 {-| Creates a UserStatus
 -}
-create_user_status : CreateUserStatusRequiredArguments -> SelectionSet decodesTo UserEating.Object.UserStatus -> SelectionSet (Maybe decodesTo) RootMutation
+create_user_status : CreateUserStatusRequiredArguments -> SelectionSet decodesTo UserEating.Union.UserStatus -> SelectionSet (Maybe decodesTo) RootMutation
 create_user_status requiredArgs object_ =
     Object.selectionForCompositeField "create_user_status" [ Argument.required "user_status" requiredArgs.user_status UserEating.InputObject.encodeUserStatusInputType ] object_ (identity >> Decode.nullable)
 
@@ -179,7 +179,7 @@ type alias DestroyUserStatusRequiredArguments =
 
 {-| Destroys a UserStatus
 -}
-destroy_user_status : DestroyUserStatusRequiredArguments -> SelectionSet decodesTo UserEating.Object.UserStatus -> SelectionSet (Maybe decodesTo) RootMutation
+destroy_user_status : DestroyUserStatusRequiredArguments -> SelectionSet decodesTo UserEating.Union.UserStatus -> SelectionSet (Maybe decodesTo) RootMutation
 destroy_user_status requiredArgs object_ =
     Object.selectionForCompositeField "destroy_user_status" [ Argument.required "id" requiredArgs.id Encode.string ] object_ (identity >> Decode.nullable)
 
@@ -251,7 +251,7 @@ type alias UpdateUserStatusRequiredArguments =
 
 {-| Updates a UserStatus
 -}
-update_user_status : (UpdateUserStatusOptionalArguments -> UpdateUserStatusOptionalArguments) -> UpdateUserStatusRequiredArguments -> SelectionSet decodesTo UserEating.Object.UserStatus -> SelectionSet (Maybe decodesTo) RootMutation
+update_user_status : (UpdateUserStatusOptionalArguments -> UpdateUserStatusOptionalArguments) -> UpdateUserStatusRequiredArguments -> SelectionSet decodesTo UserEating.Union.UserStatus -> SelectionSet (Maybe decodesTo) RootMutation
 update_user_status fillInOptionals requiredArgs object_ =
     let
         filledInOptionals =

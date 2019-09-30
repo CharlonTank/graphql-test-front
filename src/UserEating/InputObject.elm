@@ -56,14 +56,13 @@ buildUserInputType fillOptionals =
     let
         optionals =
             fillOptionals
-                { status = Absent, first_name = Absent, last_name = Absent, email = Absent }
+                { first_name = Absent, last_name = Absent, email = Absent }
     in
-    { status = optionals.status, first_name = optionals.first_name, last_name = optionals.last_name, email = optionals.email }
+    { first_name = optionals.first_name, last_name = optionals.last_name, email = optionals.email }
 
 
 type alias UserInputTypeOptionalFields =
-    { status : OptionalArgument String
-    , first_name : OptionalArgument String
+    { first_name : OptionalArgument String
     , last_name : OptionalArgument String
     , email : OptionalArgument String
     }
@@ -72,8 +71,7 @@ type alias UserInputTypeOptionalFields =
 {-| Type for the UserInputType input object.
 -}
 type alias UserInputType =
-    { status : OptionalArgument String
-    , first_name : OptionalArgument String
+    { first_name : OptionalArgument String
     , last_name : OptionalArgument String
     , email : OptionalArgument String
     }
@@ -84,7 +82,7 @@ type alias UserInputType =
 encodeUserInputType : UserInputType -> Value
 encodeUserInputType input =
     Encode.maybeObject
-        [ ( "status", Encode.string |> Encode.optional input.status ), ( "first_name", Encode.string |> Encode.optional input.first_name ), ( "last_name", Encode.string |> Encode.optional input.last_name ), ( "email", Encode.string |> Encode.optional input.email ) ]
+        [ ( "first_name", Encode.string |> Encode.optional input.first_name ), ( "last_name", Encode.string |> Encode.optional input.last_name ), ( "email", Encode.string |> Encode.optional input.email ) ]
 
 
 buildUserStatusInputType : (UserStatusInputTypeOptionalFields -> UserStatusInputTypeOptionalFields) -> UserStatusInputType

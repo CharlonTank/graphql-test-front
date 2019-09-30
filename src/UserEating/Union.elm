@@ -5,6 +5,5 @@
 module UserEating.Union exposing (..)
 
 
-placeholder : String
-placeholder =
-    ""
+type UserStatus
+    = UserStatus
